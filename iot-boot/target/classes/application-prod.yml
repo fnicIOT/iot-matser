@@ -1,0 +1,4 @@
+server:
+  #port: 8443
+  port: 7080
+  context-path: /boot

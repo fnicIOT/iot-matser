@@ -1,0 +1,102 @@
+server:
+  #port: 8443
+  port: 9090
+  context-path: /boot
+  session:
+    timeout: 3600
+  tomcat:
+    uri-encoding: utf-8
+#  SSL配置
+  ssl:
+    key-store: classpath:sample.jks
+    key-store-password: secret
+    key-password: password
+    #key-store: classpath:keystore.p12
+    #key-password: fnic2018
+    #key-store-type: PKCS12
+    #key-alias: fnic
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    thingsboard:
+        name: thingsboard
+        #url: jdbc:mysql://192.168.58.11:3306/test
+        #url: jdbc:mysql://192.168.33.167:3306/test?useUnicode=true&characterEncoding=utf8
+        url: jdbc:postgresql://localhost:5432/thingsboard
+        username: postgres
+        password: postgres
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: org.postgresql.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+
+    iot:
+        name: iot
+        url: jdbc:postgresql://localhost:5432/iot
+        username: postgres
+        password: postgres
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: org.postgresql.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  mvc:
+    view:
+      suffix: .html
+#  resources:
+#    static-locations:
+
+#mybatis:
+#  type-aliases-package: com.fnic.mybatis.thingsboard.dao
+
+logging:
+  file: log/log.log
+  level.org.springframework.web: debug
+  level.org.springframework.security: debug
+  level.org.mybatis.spring.boot: debug
+  level.com.alibaba.druid: debug
+  level.java.sql.Statement: debug
+  level.java.sql.PreparedStatement: debug
+  level.java.sql.ResultSet: debug
+  level.com.fnic: debug
+
+
