@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61ba751c-e50b-4008-9677-04683b6faaa4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/iot-boot/src/main/java/com/fnic/service/HaoThinkService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/sysframe/config/ConfigSettings.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/controller/DeviceController.class" afterPath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/controller/DeviceController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/service/DeviceService.class" afterPath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/service/DeviceService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/service/impl/DeviceServiceImpl.class" afterPath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/service/impl/DeviceServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/sysframe/utils/JWTTokenUtil.class" afterPath="$PROJECT_DIR$/iot-boot/target/classes/com/fnic/sysframe/utils/JWTTokenUtil.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/test-classes/TestObject.class" afterPath="$PROJECT_DIR$/iot-boot/target/test-classes/TestObject.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/src/main/java/com/fnic/controller/DeviceController.java" afterPath="$PROJECT_DIR$/iot-boot/src/main/java/com/fnic/controller/DeviceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/src/main/java/com/fnic/service/DeviceService.java" afterPath="$PROJECT_DIR$/iot-boot/src/main/java/com/fnic/service/DeviceService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/src/main/java/com/fnic/service/impl/DeviceServiceImpl.java" afterPath="$PROJECT_DIR$/iot-boot/src/main/java/com/fnic/service/impl/DeviceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/iot-boot/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/iot-boot/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/src/test/java/TestObject.java" afterPath="$PROJECT_DIR$/iot-boot/src/test/java/TestObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/classes/application.yml" afterPath="$PROJECT_DIR$/iot-boot/target/classes/application.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/log/log.log" afterPath="$PROJECT_DIR$/iot-boot/target/log/log.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iot-boot/target/surefire-reports/TEST-TestObject.xml" afterPath="$PROJECT_DIR$/iot-boot/target/surefire-reports/TEST-TestObject.xml" />
@@ -294,95 +286,6 @@
               <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fnic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fnic" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fnic" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fnic" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-matser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-matser" type="462c0819:PsiDirectoryNode" />
-              <item name="iot-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -648,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521180927272</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1521619344342</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1521619344342</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
