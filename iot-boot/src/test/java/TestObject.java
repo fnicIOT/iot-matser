@@ -2,6 +2,7 @@ import com.datastax.driver.core.utils.UUIDs;
 import com.fnic.bean.RspBean;
 import com.fnic.mybatis.thingsboard.model.AttributeKv;
 import com.fnic.sysframe.security.Authority;
+import com.fnic.sysframe.utils.DateUtil;
 import com.fnic.sysframe.utils.JWTTokenUtil;
 import com.google.common.collect.Maps;
 import io.jsonwebtoken.Claims;
@@ -40,6 +41,10 @@ public class TestObject {
         rspData.put("2222","22222");
 
         logger.debug("@@@@@@@");
+
+        logger.debug("" + new Date().getTime());
+        logger.debug("" + DateUtil.getNowTime());
+
     }
 
     @Test

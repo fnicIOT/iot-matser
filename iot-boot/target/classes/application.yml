@@ -7,10 +7,10 @@ server:
   tomcat:
     uri-encoding: utf-8
 #  SSL配置
-  ssl:
-    key-store: classpath:sample.jks
-    key-store-password: secret
-    key-password: password
+  #ssl:
+    #key-store: classpath:sample.jks
+    #key-store-password: secret
+    #key-password: password
     #key-store: classpath:keystore.p12
     #key-password: fnic2018
     #key-store-type: PKCS12
