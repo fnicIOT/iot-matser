@@ -24,7 +24,7 @@ spring:
         name: thingsboard
         #url: jdbc:mysql://192.168.58.11:3306/test
         #url: jdbc:mysql://192.168.33.167:3306/test?useUnicode=true&characterEncoding=utf8
-        url: jdbc:postgresql://localhost:5432/thingsboard
+        url: jdbc:postgresql://192.168.33.167:5432/thingsboard
         username: postgres
         password: postgres
         type: com.alibaba.druid.pool.DruidDataSource
@@ -45,7 +45,7 @@ spring:
 
     iot:
         name: iot
-        url: jdbc:postgresql://localhost:5432/iot
+        url: jdbc:postgresql://192.168.33.167:5432/iot
         username: postgres
         password: postgres
         type: com.alibaba.druid.pool.DruidDataSource

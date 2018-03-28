@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="UUIDConvertTest" time="0.444" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="UUIDConvertTest" time="5.451" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/share/java/jre/lib/amd64"/>
@@ -61,8 +61,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="UUIDConvertTest" name="nonV1UuidToStringTest" time="0.004"/>
-  <testcase classname="UUIDConvertTest" name="basicUuidToStringTest" time="0.004"/>
-  <testcase classname="UUIDConvertTest" name="basicUuidComperisonTest" time="0.436"/>
+  <testcase classname="UUIDConvertTest" name="nonV1UuidToStringTest" time="0"/>
+  <testcase classname="UUIDConvertTest" name="basicUuidToStringTest" time="0"/>
+  <testcase classname="UUIDConvertTest" name="basicUuidComperisonTest" time="5.451"/>
   <testcase classname="UUIDConvertTest" name="basicStringToUUIDTest" time="0"/>
 </testsuite>

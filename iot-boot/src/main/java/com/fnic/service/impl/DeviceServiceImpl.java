@@ -7,6 +7,7 @@ import com.fnic.mybatis.thingsboard.dao.AttributeKvMapper;
 import com.fnic.mybatis.thingsboard.dao.DeviceCredentialsMapper;
 import com.fnic.mybatis.thingsboard.dao.DeviceMapper;
 import com.fnic.mybatis.thingsboard.model.*;
+import com.fnic.service.BaseService;
 import com.fnic.service.DeviceService;
 import com.fnic.sysframe.config.BaseConstants;
 import com.fnic.sysframe.security.SysUser;
@@ -25,7 +26,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
-public class DeviceServiceImpl implements DeviceService {
+public class DeviceServiceImpl extends BaseService implements DeviceService {
 
     @Resource
     private DeviceMapper deviceMapper;
@@ -46,7 +47,7 @@ public class DeviceServiceImpl implements DeviceService {
         example.setLimitEnd(pageBean.getPageSize());
 
         example.setOrderByClause("entity_id");
-        List<AttributeKv> list = deviceMapper.queryDevicesByTenantId(example);
+        List<AttributeKv> list = deviceMapper.queryDevicesByTenantId(null,example);
 
         List<Map<String,Object>> deviceList = converToDeviceList(list);
 

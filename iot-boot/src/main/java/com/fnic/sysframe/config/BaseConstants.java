@@ -9,8 +9,52 @@ import org.springframework.stereotype.Component;
 public class BaseConstants {
 
     @Value("${default.tenantId}")
-    public static String defaultTenantId;
+    public String defaultTenantId;
 
     @Value("${default.password}")
-    public static String defaultPassword;
+    public String defaultPassword;
+
+    @Value("${default.haothink.tenantId}")
+    public String defaultHaoThinkTenantId;
+
+    @Value("${default.haothink.customerId}")
+    public String defaultHaoThinkCustomerId;
+
+    @Value("${default.huali.tenantId}")
+    public String defaultHualiTenantId;
+
+    @Value("${default.huali.customerId}")
+    public String defaultHualiCustomerId;
+
+    public String getDefaultTenantId() {
+        return defaultTenantId;
+    }
+
+    public void setDefaultTenantId(String defaultTenantId) {
+        this.defaultTenantId = defaultTenantId;
+    }
+
+    public String getDefaultPassword() {
+        return defaultPassword;
+    }
+
+    public void setDefaultPassword(String defaultPassword) {
+        this.defaultPassword = defaultPassword;
+    }
+
+    public String getDefaultHaoThinkTenantId() {
+        return defaultHaoThinkTenantId;
+    }
+
+    public void setDefaultHaoThinkTenantId(String defaultHaoThinkTenantId) {
+        this.defaultHaoThinkTenantId = defaultHaoThinkTenantId;
+    }
+
+    public String getDefaultHaoThinkCustomerId() {
+        return defaultHaoThinkCustomerId;
+    }
+
+    public void setDefaultHaoThinkCustomerId(String defaultHaoThinkCustomerId) {
+        this.defaultHaoThinkCustomerId = defaultHaoThinkCustomerId;
+    }
 }

@@ -5,10 +5,8 @@ import com.fnic.bean.RspBean;
 import com.fnic.mybatis.thingsboard.model.AttributeKv;
 import com.fnic.mybatis.thingsboard.model.Device;
 import com.fnic.service.DeviceService;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.fnic.service.PlatformDockService;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -21,7 +19,10 @@ public class DeviceController extends BaseController {
     @Resource
     private DeviceService deviceService;
 
-    @RequestMapping(value = "queryDevices",method = RequestMethod.POST)
+    @Resource
+    private PlatformDockService platformDockService;
+
+    @PostMapping("queryDevices")
     public RspBean queryDevices(@RequestBody ReqBean reqData) throws Exception {
         List<Map<String,Object>> list = deviceService.queryDevicesByCustomerId(reqData.getPageBean());
 
@@ -50,6 +51,15 @@ public class DeviceController extends BaseController {
 
         RspBean rspData = new RspBean();
 
+        return rspData;
+    }
+
+    @PostMapping("queryDevicesGC")
+    public RspBean queryDevicesGC(@RequestBody ReqBean reqData) throws Exception {
+        List<Map<String,Object>> list = platformDockService.queryDevicesGC(reqData);
+
+        RspBean rspData = new RspBean();
+        rspData.put("list",list);
         return rspData;
     }
 }

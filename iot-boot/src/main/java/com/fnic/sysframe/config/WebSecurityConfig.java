@@ -47,7 +47,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         filter.setAuthenticationSuccessHandler(new CustomAuthenticationSuccessHandler());
 
         http.authorizeRequests()
-                .antMatchers("/","/login","/index","/assets/**","/static/**","/*.js","/*.css","/*.map").permitAll()
+                .antMatchers("/","/login","/index","/assets/**","/static/**","/*.js","/*.css","/*.map",
+                        "/haothink/**","/huali/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

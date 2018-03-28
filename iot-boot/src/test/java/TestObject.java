@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import org.slf4j.Logger;
+import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -26,7 +27,7 @@ public class TestObject {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Test
-    public void TestPasswdEncode(){
+    public void testPasswdEncode(){
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String passwd = "tenant";
@@ -35,7 +36,7 @@ public class TestObject {
     }
 
     @Test
-    public void TestRspData() {
+    public void testRspData() {
         RspBean rspData = new RspBean();
 
         rspData.put("2222","22222");
@@ -48,19 +49,19 @@ public class TestObject {
     }
 
     @Test
-    public void TestUUID() {
+    public void testUUID() {
         UUID userId = UUIDs.timeBased();
         logger.debug("@@@@@@@:" + userId.toString() + "  :" + userId);
     }
 
     @Test
-    public void TestEnum() {
+    public void testEnum() {
         logger.debug("@@@@@@@:" + Authority.CUSTOMER_USER.toString());
     }
 
 
     @Test
-    public void TestStream() {
+    public void testStream() {
         List<AttributeKv> list = Lists.newArrayList();
 
         AttributeKv attr = new AttributeKv();
@@ -144,7 +145,7 @@ public class TestObject {
     }
 
     @Test
-    public void TestToken() {
+    public void testToken() {
         Map<String,Object> claims = Maps.newHashMap();
 
         claims.put("key","33333");
@@ -164,7 +165,18 @@ public class TestObject {
     }
 
     @Test
-    public void TestTime() {
+    public void testTime() {
         logger.debug("" + new Date(System.currentTimeMillis() + 60 * 60 * 24 * 15 * 1000));
+    }
+
+    @Test
+    public void testValid() {
+        Map<String,Object> param = Maps.newHashMap();
+        String str = (String) param.get("test");
+        if(StringUtils.isEmpty(str)) {
+            logger.debug("true");
+        }else {
+            logger.debug("false");
+        }
     }
 }

@@ -7,6 +7,6 @@ import java.util.Map;
 public interface HaoThinkService {
 
     @Transactional
-    public Map<String,Object> addDevice(Map<String, Object> param);
+    public Map<String,Object> addDevice(Map<String, Object> param) throws Exception;
 
 }

@@ -1,6 +1,7 @@
 package com.fnic.mybatis.thingsboard.dao;
 
 import com.fnic.mybatis.thingsboard.model.AttributeKv;
+import com.fnic.mybatis.thingsboard.model.AttributeKvExample;
 import com.fnic.mybatis.thingsboard.model.Device;
 import com.fnic.mybatis.thingsboard.model.DeviceExample;
 import org.apache.ibatis.annotations.Param;
@@ -96,5 +97,6 @@ public interface DeviceMapper {
      */
     int updateByPrimaryKey(Device record);
 
-    List<AttributeKv> queryDevicesByTenantId(DeviceExample example);
+    List<AttributeKv> queryDevicesByTenantId(
+            @Param("attributeExample") AttributeKvExample attributeKvExample, @Param("deviceExample") DeviceExample example);
 }

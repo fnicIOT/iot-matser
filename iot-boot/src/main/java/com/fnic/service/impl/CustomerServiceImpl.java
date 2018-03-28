@@ -12,6 +12,7 @@ import com.fnic.mybatis.thingsboard.model.Customer;
 import com.fnic.mybatis.thingsboard.model.TbUser;
 import com.fnic.mybatis.thingsboard.model.TbUserExample;
 import com.fnic.mybatis.thingsboard.model.UserCredentials;
+import com.fnic.service.BaseService;
 import com.fnic.service.CustomerService;
 import com.fnic.sysframe.config.BaseConstants;
 import com.fnic.sysframe.security.Authority;
@@ -26,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImpl extends BaseService implements CustomerService {
 
     @Resource
     private CustomerMapper customerMapper;
@@ -65,21 +66,21 @@ public class CustomerServiceImpl implements CustomerService {
                 tbUser.setCustomerId(customerId);
                 tbUser.setEmail(accountName);
                 tbUser.setSearchText(accountName);
-                tbUser.setTenantId(BaseConstants.defaultTenantId);
+                tbUser.setTenantId(baseConstants.defaultTenantId);
 
                 tbUserMapper.insert(tbUser);
 
                 Customer customer = new Customer();
                 customer.setId(customerId);
                 customer.setSearchText(accountName);
-                customer.setTenantId(BaseConstants.defaultTenantId);
+                customer.setTenantId(baseConstants.defaultTenantId);
                 customer.setTitle(accountName);
                 customerMapper.insert(customer);
 
                 String userCredentialsId = UUIDConverter.fromTimeUUID(UUIDs.timeBased());
 
                 BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-                String password = bCryptPasswordEncoder.encode(BaseConstants.defaultPassword);
+                String password = bCryptPasswordEncoder.encode(baseConstants.defaultPassword);
 
                 UserCredentials userCredentials = new UserCredentials();
                 userCredentials.setId(userCredentialsId);
