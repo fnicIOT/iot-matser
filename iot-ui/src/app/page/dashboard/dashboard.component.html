@@ -1,0 +1,221 @@
+<div class="animated fadeIn">
+  <!--/.card-->
+
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="social-box facebook">
+        <i class="fa fa-facebook"></i>
+        <div class="chart-wrapper">
+          <canvas baseChart class="chart"
+          [datasets]="socialChartData1"
+          [labels]="socialChartLabels"
+          [options]="socialChartOptions"
+          [colors]="socialChartColours"
+          [legend]="socialChartLegend"
+          [chartType]="socialChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        <ul>
+          <li>
+            <strong>89k</strong>
+            <span>wan</span>
+          </li>
+          <li>
+            <strong>459</strong>
+            <span>feeds</span>
+          </li>
+        </ul>
+      </div>
+      <!--/.social-box-->
+    </div><!--/.col-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="social-box twitter">
+        <i class="fa fa-twitter"></i>
+        <div class="chart-wrapper">
+          <canvas baseChart class="chart"
+          [datasets]="socialChartData2"
+          [labels]="socialChartLabels"
+          [options]="socialChartOptions"
+          [colors]="socialChartColours"
+          [legend]="socialChartLegend"
+          [chartType]="socialChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        <ul>
+          <li>
+            <strong>973k</strong>
+            <span>followers</span>
+          </li>
+          <li>
+            <strong>1.792</strong>
+            <span>tweets</span>
+          </li>
+        </ul>
+      </div>
+      <!--/.social-box-->
+    </div><!--/.col-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="social-box linkedin">
+        <i class="fa fa-linkedin"></i>
+        <div class="chart-wrapper">
+          <canvas baseChart class="chart"
+          [datasets]="socialChartData3"
+          [labels]="socialChartLabels"
+          [options]="socialChartOptions"
+          [colors]="socialChartColours"
+          [legend]="socialChartLegend"
+          [chartType]="socialChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        <ul>
+          <li>
+            <strong>500+</strong>
+            <span>contacts</span>
+          </li>
+          <li>
+            <strong>292</strong>
+            <span>feeds</span>
+          </li>
+        </ul>
+      </div>
+      <!--/.social-box-->
+    </div><!--/.col-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="social-box google-plus">
+        <i class="fa fa-google-plus"></i>
+        <div class="chart-wrapper">
+          <canvas baseChart class="chart"
+          [datasets]="socialChartData4"
+          [labels]="socialChartLabels"
+          [options]="socialChartOptions"
+          [colors]="socialChartColours"
+          [legend]="socialChartLegend"
+          [chartType]="socialChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        <ul>
+          <li>
+            <strong>894</strong>
+            <span>followers</span>
+          </li>
+          <li>
+            <strong>92</strong>
+            <span>circles</span>
+          </li>
+        </ul>
+      </div>
+      <!--/.social-box-->
+    </div><!--/.col-->
+  </div><!--/.row-->
+
+  <div class="row">
+    <div class="col-lg-5 col-md-6 col-xs-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 [option]="onlineUserOption"></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-xs-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 [option]="top5UserOption"></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <abm-map #map [options]="options" (ready)="onReady($event)" style="height: 300px;"></abm-map>
+          </blockquote>
+        </div>
+      </div>    
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-5 col-md-6 col-xs-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 [option]="top5AddressFlowOption"></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-xs-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 [option]="top5AppFlowOption"></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            应用
+
+ 
+            网盘地址:
+
+            wwwin.fnic.cn
+
+            网盘容量
+
+            100G
+          </blockquote>
+        </div>
+      </div>    
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 [option]="netStatusOption"></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            应用
+          </blockquote>
+        </div>
+      </div>    
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 [option]="netStatusOption"></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

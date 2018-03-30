@@ -1,0 +1,284 @@
+<div class="animated fadeIn">
+    <router-outlet></router-outlet>
+    <div class="row">
+    <div class="col-lg-12">
+
+      <tabset>
+        <tab heading="组">
+          <div class="row">
+             <div class="col-lg-9">
+              <strong>组</strong> 
+             </div>
+             <div class="col-lg-3 form-inline">
+              <div class="form-group">
+                <input class="form-control" id="groupName" name="groupName" placeholder="按组名搜索" type="text">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" type="button" data-toggle="modal" (click)="showGroupUpdateModal();">添加组</button>
+              </div>
+            </div>
+          </div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>组名称</th>
+                  <th>IP分组</th>
+                  <th>描述</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor ="let item of groupList">
+                  <td>{{item.groupName}}</td>
+                  <td>{{item.ip}}</td>
+                  <td>{{item.desc}}</td>
+                  <td class="text-right">
+                    <button type="button" (click)="showGroupUpdateModal(true,item);" class="btn btn-sm btn-primary">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" (click)="warningModal.show();" class="btn btn-sm btn-danger">
+                      <i class="fa fa-times-circle-o"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </tab>
+        <tab heading="用户">
+          <div class="row">
+             <div class="col-lg-9">
+              <strong>用户</strong> 
+             </div>
+             <div class="col-lg-3 form-inline">
+              <div class="form-group">
+                <ng-select [allowClear]="true"
+                            [items]="userSelect"
+                            [active]='[userSelect[0]]'
+                            [disabled]="disabled"
+                            (data)="refreshValue($event)"
+                            (selected)="selected($event)"
+                            (removed)="removed($event)"
+                            (typed)="typed($event)"
+                            placeholder="">
+                </ng-select>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" id="userLabel" name="userLabel" placeholder="按指定列搜索用户" type="text">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" type="button" data-toggle="modal" (click)="showUserUpdateModal(false);">添加用户</button>
+              </div>
+            </div>
+          </div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>用户名</th>
+                  <th>注册时间</th>
+                  <th>邮箱</th>
+                  <th>组</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor ="let item of userList">
+                  <td>{{item.userName}}</td>
+                  <td>{{item.fullName}}</td>
+                  <td>{{item.email}}</td>
+                  <td>{{item.groupName}}</td>
+                  <td class="text-right">
+                    <button type="button" (click)="showUserUpdateModal(true,item);" class="btn btn-sm btn-primary">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" (click)="warningModal.show();" class="btn btn-sm btn-danger">
+                      <i class="fa fa-times-circle-o"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>            
+        </tab>
+        <tab heading="设备">
+          <div class="row">
+             <div class="col-lg-9">
+              <strong>设备</strong> 
+             </div>
+             <div class="col-lg-3 form-inline">
+              <div class="form-group">
+                <ng-select [allowClear]="true"
+                            [items]="userSelect"
+                            [active]='[userSelect[0]]'
+                            [disabled]="disabled"
+                            (data)="refreshValue($event)"
+                            (selected)="selected2($event)"
+                            (removed)="removed($event)"
+                            (typed)="typed($event)"
+                            placeholder="">
+                </ng-select>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" id="userLabel" name="userLabel" placeholder="搜索" type="text">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" type="button" data-toggle="modal" (click)="showDeviceUpdateModal(false);">添加MAC</button>
+              </div>
+            </div>
+          </div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>MAC地址</th>
+                  <th>用户名</th>
+                  <th>类型</th>
+                  <th>IP地址</th>
+                  <th>主机名</th>
+                  <th>域名</th>
+                  <th>组</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor ="let item of deviceList">
+                  <td>{{item.mac}}</td>
+                  <td>{{item.userName}}</td>
+                  <td>{{item.typeName}}</td>
+                  <td>{{item.ipAddress}}</td>
+                  <td>{{item.hostName}}</td>
+                  <td>{{item.domainName}}</td>                 
+                  <td>{{item.groupName}}</td>
+                  <td class="text-right">
+                    <button type="button" (click)="showDeviceUpdateModal(true,item);" class="btn btn-sm btn-primary">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" (click)="warningModal.show();" class="btn btn-sm btn-danger">
+                      <i class="fa fa-times-circle-o"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>            
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
+
+<div bsModal #groupUpdateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="groupUpdateModalLabel"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ modalTitle }}</h4>
+        <button type="button" class="close" (click)="groupUpdateModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="userName">组名</label>
+          <input type="text" id="userName" name="userName" [(ngModel)]="user.groupName" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="fullName">描述</label>
+          <input type="text" id="fullName" name="fullName" [(ngModel)]="user.desc" class="form-control"/>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="groupUpdateModal.hide()">关闭</button>
+        <button type="button" class="btn btn-primary" (click)="groupUpdateModal.hide()">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div bsModal #userUpdateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userUpdateModalLabel"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ modalTitle }}</h4>
+        <button type="button" class="close" (click)="userUpdateModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="userName">用户名</label>
+          <input type="text" id="userName" name="userName" [(ngModel)]="user.userName" #userName="ngModel" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="fullName">全名</label>
+          <input type="text" id="fullName" name="fullName" [(ngModel)]="user.fullName" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="password">密码</label>
+          <input type="password" id="password" name="password" [(ngModel)]="user.password" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="email">邮箱</label>
+          <input type="email" id="email" name="email" [(ngModel)]="user.email" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="group">组</label>
+          <input type="text" id="group" name="group" [(ngModel)]="user.groupName" class="form-control"/>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="userUpdateModal.hide()">关闭</button>
+        <button type="button" class="btn btn-primary" (click)="userUpdateModal.hide()">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div bsModal #deviceUpdateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userUpdateModalLabel"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ modalTitle }}</h4>
+        <button type="button" class="close" (click)="deviceUpdateModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="userName">MAC</label>
+          <input type="text" id="userName" name="userName" [(ngModel)]="user.mac" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="fullName">类型</label>
+          <input type="text" id="fullName" name="fullName" [(ngModel)]="user.typeName" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="password">用户名</label>
+          <input type="text" id="password" name="password" [(ngModel)]="user.userName" class="form-control"/>
+        </div>
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="deviceUpdateModal.hide()">关闭</button>
+          <button type="button" class="btn btn-primary" (click)="deviceUpdateModal.hide()">保存</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #warningModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-warning" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">警告</h4>
+        <button type="button" class="close" (click)="warningModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2>确认删除该用户？</h2>
+        <p>确认后，该用户将被删除，且无法恢复</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="warningModal.hide()">取消</button>
+        <button type="button" class="btn btn-primary" (click)="warningModal.hide()">确认</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

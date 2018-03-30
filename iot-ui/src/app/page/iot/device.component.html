@@ -1,0 +1,195 @@
+<div class="row">
+	<div class="col-lg-12">
+		<tabset>
+	        <tab heading="烟感">
+				<div class="row">
+		            <div class="col-lg-9">
+		            <!-- <strong>组</strong>  -->
+		            </div>
+		            <div class="col-lg-3 form-inline">
+			            <div class="form-group">
+			            	<input class="form-control" id="groupName" name="groupName" placeholder="按组名搜索" type="text">
+			            </div>
+			            <div class="form-group">
+			                <button class="btn btn-primary" type="button" data-toggle="modal" (click)="showGroupUpdateModal();">添加组</button>
+			            </div>
+		            </div>
+		        </div>
+			    <div class="row">
+             		<div class="col-lg-12">
+			        <table class="table table-bordered table-striped table-condensed">
+				        <thead>
+				          <tr>
+				              <th>设备编码</th>
+				              <th>卡号</th>
+				              <th>产品类别</th>
+				              <th>设备型号</th>
+				              <th>详细地址</th>
+				              <th>所在位置</th>
+				              <th>经度</th>
+				              <th>维度</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				            <tr *ngFor ="let item of deviceList">
+				              <td>{{item.objectData.id}}</td>
+				              <td>{{item.objectData.location_x}}</td>
+				              <td>{{item.objectData.location_y}}</td>
+				              <td class="text-left">
+				                <button type="button" (click)="showConfirm(item);" class="btn btn-sm btn-danger">
+				                  <i class="fa fa-times-circle-o"></i>
+				                </button>
+				              </td>
+				            </tr>
+				        </tbody>
+			      	</table>
+			      <nav>
+			        <ul class="pagination">
+			          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+			          <li class="page-item active">
+			            <a class="page-link" href="#">1</a>
+			          </li>
+			          <li class="page-item"><a class="page-link" href="#">2</a></li>
+			          <li class="page-item"><a class="page-link" href="#">3</a></li>
+			          <li class="page-item"><a class="page-link" href="#">4</a></li>
+			          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+			        </ul>
+			      </nav>
+			    </div>
+			  </div>
+			</tab>
+			<tab heading="电表">
+				<div class="row">
+		            <div class="col-lg-9">
+		            <!-- <strong>组</strong>  -->
+		            </div>
+		            <div class="col-lg-3 form-inline">
+			            <div class="form-group">
+			            	<input class="form-control" id="groupName" name="groupName" placeholder="按组名搜索" type="text">
+			            </div>
+			            <div class="form-group">
+			                <button class="btn btn-primary" type="button" data-toggle="modal" (click)="showGroupUpdateModal();">添加组</button>
+			            </div>
+		            </div>
+		        </div>
+			    <div class="row">
+             		<div class="col-lg-12">
+			        <table class="table table-bordered table-striped table-condensed">
+				        <thead>
+				          <tr>
+				              <th>设备编码</th>
+				              <th>数据采集时间</th>
+				              <th>正向有功总</th>
+				              <th>正向有功尖</th>
+				              <th>正向有功峰</th>
+				              <th>正向有功平</th>
+				              <th>正向有功谷</th>
+				              <th>拉合闸状态</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				            <tr *ngFor ="let item of deviceList">
+				              <td>{{item.objectData.id}}</td>
+				              <td>{{item.objectData.location_x}}</td>
+				              <td>{{item.objectData.location_y}}</td>
+				              <td class="text-left">
+				                <button type="button" (click)="showConfirm(item);" class="btn btn-sm btn-danger">
+				                  <i class="fa fa-times-circle-o"></i>
+				                </button>
+				              </td>
+				            </tr>
+				        </tbody>
+			      	</table>
+			      <nav>
+			        <ul class="pagination">
+			          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+			          <li class="page-item active">
+			            <a class="page-link" href="#">1</a>
+			          </li>
+			          <li class="page-item"><a class="page-link" href="#">2</a></li>
+			          <li class="page-item"><a class="page-link" href="#">3</a></li>
+			          <li class="page-item"><a class="page-link" href="#">4</a></li>
+			          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+			        </ul>
+			      </nav>
+			    </div>
+			  </div>
+			</tab>
+			<tab heading="水表">
+				<div class="row">
+		            <div class="col-lg-9">
+		            <!-- <strong>组</strong>  -->
+		            </div>
+		            <div class="col-lg-3 form-inline">
+			            <div class="form-group">
+			            	<input class="form-control" id="groupName" name="groupName" placeholder="按组名搜索" type="text">
+			            </div>
+			            <div class="form-group">
+			                <button class="btn btn-primary" type="button" data-toggle="modal" (click)="showGroupUpdateModal();">添加组</button>
+			            </div>
+		            </div>
+		        </div>
+			    <div class="row">
+             		<div class="col-lg-12">
+			        <table class="table table-bordered table-striped table-condensed">
+				        <thead>
+				          <tr>
+				              <th>设备编码</th>
+				              <th>数据采集时间</th>
+				              <th>水表表码</th>
+				              <th>阀门状态</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				            <tr *ngFor ="let item of deviceList">
+				              <td>{{item.objectData.id}}</td>
+				              <td>{{item.objectData.location_x}}</td>
+				              <td>{{item.objectData.location_y}}</td>
+				              <td class="text-left">
+				                <button type="button" (click)="showConfirm(item);" class="btn btn-sm btn-danger">
+				                  <i class="fa fa-times-circle-o"></i>
+				                </button>
+				              </td>
+				            </tr>
+				        </tbody>
+			      	</table>
+			      <nav>
+			        <ul class="pagination">
+			          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+			          <li class="page-item active">
+			            <a class="page-link" href="#">1</a>
+			          </li>
+			          <li class="page-item"><a class="page-link" href="#">2</a></li>
+			          <li class="page-item"><a class="page-link" href="#">3</a></li>
+			          <li class="page-item"><a class="page-link" href="#">4</a></li>
+			          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+			        </ul>
+			      </nav>
+			    </div>
+			  </div>
+			</tab>
+		</tabset>
+	</div>
+</div>
+
+
+<div bsModal #confirmModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-warning" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">警告</h4>
+        <button type="button" class="close" (click)="confirmModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2>确认发送指令？</h2>
+<!--         <p>确认后，该用户将被删除，且无法恢复</p>
+ -->      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="confirmModal.hide()">取消</button>
+        <button type="button" class="btn btn-primary" (click)="confirmSend()">确认</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

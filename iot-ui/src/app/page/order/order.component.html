@@ -1,0 +1,245 @@
+<style type="text/css">
+
+	.badge {
+		display: inline-block;
+		min-width: 10px;
+		padding: 3px 7px;
+		font-size: 12px;
+		color: #fff;
+		vertical-align: middle;
+		background-color: #777;
+		border-radius: 10px;
+	}
+
+</style>
+<div class="animated fadeIn">
+  <div class="col-lg-12">
+    <div class="row">
+    	<div class="tab-panel col-lg-9">
+	    	<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h4 class="panel-title">现有服务<span class="label label-success">运行中</span>
+				<div class="pull-right">
+					<button type="button" class="btn btn-secondary" (click)="deviceUpdateModal.hide()">购买</button>
+		          	<button type="button" class="btn btn-primary" (click)="deviceUpdateModal.hide()">一键续费</button>
+			    </div>
+			    </h4>
+			    
+			  </div>
+			  <div class="panel-body">
+			  	<div>
+					<ul class="service-list">
+						<li *ngFor="let productType of productTypeList">
+							<span class="title">{{productType.productTypeName}}</span>
+							<span class="content">
+								<h3>
+								    <span  *ngFor="let product of productType.productList;let i=index" >						    
+										<span class="label label-info"  *ngIf="i<=3"
+										(click)="showProductModel(product)">
+											{{product.productName}}
+											<span class="badge badge-default" *ngIf="product.checkedPackagesName != null">{{product.checkedPackagesName}}</span>
+										</span>
+									</span>
+								</h3>
+								<h3>
+								    <span  *ngFor="let product of productType.productList;let i=index" >						    
+										<span class="label label-info"  *ngIf="i>3"
+										(click)="showProductModel(product)">
+											{{product.productName}}
+											<span class="badge badge-default" *ngIf="product.checkedPackagesName != null">{{product.checkedPackagesName}}</span>
+										</span>
+									</span>
+								</h3>
+							</span>
+						</li>	
+					</ul>
+			  	</div>
+			  </div>
+			</div>
+
+	    	<div class="tab-panel">
+		    	<div class="panel panel-default">
+				  	<div class="panel-heading">
+					    <h4 class="panel-title">云主机VDC
+							<div class="pull-right">
+								<button type="button" class="btn btn-secondary" (click)="deviceUpdateModal.hide()">创建实例</button>
+						    </div>
+					    </h4>				    
+				  	</div>
+				  	<table class="table table-striped">
+		              <thead>
+		                <tr>
+		                  <th>实例名</th>
+		                  <th>公网/内网IP</th>
+		                  <th>到期时间</th>
+		                  <th>倒计时</th>
+		                  <th></th>
+		                </tr>
+		              </thead>
+		              <tbody>
+		                <tr *ngFor ="let item of deviceList">
+		                  <td>{{item.mac}}</td>
+		                  <td>{{item.userName}}</td>
+		                  <td>{{item.typeName}}</td>
+		                  <td>{{item.ipAddress}}</td>
+		                  <td class="text-right">
+		                    <button type="button" (click)="showDeviceUpdateModal(true,item);" class="btn btn-sm btn-primary">
+		                      <i class="fa fa-pencil-square-o"></i>
+		                    </button>
+		                  </td>
+		                </tr>
+		              </tbody>
+		            </table>            
+	            	<pagination [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></pagination>
+				</div>
+			</div>
+
+	    	<div class="tab-panel">
+		    	<div class="panel panel-default">
+				 	<div class="panel-heading">
+					    <h4 class="panel-title">弹性带宽
+							<div class="pull-right">
+								<button type="button" class="btn btn-secondary" (click)="deviceUpdateModal.hide()">显示历史记录</button>
+								<button type="button" class="btn btn-primary" [routerLink]="['/order/purchase','123']">购买</button>
+<!-- 								<button type="button" class="btn btn-primary" [routerLink]="['/order/purchase',{packageId:'234'}]">购买</button>
+ -->						    </div>
+					    </h4>
+				    </div>
+				  	<table class="table table-striped">
+		              <thead>
+		                <tr>
+		                  <th>额外带宽</th>
+		                  <th>开始时间</th>
+		                  <th>结束时间</th>
+		                  <th>状态</th>
+		                </tr>
+		              </thead>
+		              <tbody>
+		                <tr *ngFor ="let item of deviceList">
+		                  <td>{{item.mac}}</td>
+		                  <td>{{item.userName}}</td>
+		                  <td>{{item.typeName}}</td>
+		                  <td>{{item.ipAddress}}</td>
+		                </tr>
+		              </tbody>
+		            </table>            
+	            	<pagination [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></pagination>
+				</div>
+			</div>
+
+			<div class="tab-panel">
+		    	<div class="panel panel-default">
+				  	<div class="panel-heading">
+					    <h4 class="panel-title">订单记录
+							<div class="pull-right form-inline">
+								<ng-select [allowClear]="true"
+			                            [items]="orderSelect"
+			                            [active]='[orderSelect[0]]'
+			                            placeholder="">
+				                </ng-select>
+				                <input class="form-control" id="userLabel" name="userLabel" placeholder="按指定列搜索用户" type="text">
+								<button type="button" class="btn btn-secondary form-control" (click)="deviceUpdateModal.hide()">发票索取</button>
+						    </div>
+					    </h4>
+					</div>
+				  	<table class="table table-striped">
+		              	<thead>
+			                <tr>
+			                  <th>订单号</th>
+			                  <th>产品</th>
+			                  <th>创建时间</th>
+			                  <th>状态</th>
+			                  <th>金额</th>
+			                  <!-- <th>付费方式</th> -->
+			                  <th></th>
+			                </tr>
+		              	</thead>
+		              	<tbody>
+			                <tr *ngFor ="let item of orderList">
+			                  <td>{{item.id}}</td>
+			                  <td>{{item.subject}}</td>
+			                  <td>{{item.createTime}}</td>
+			                  <td>{{item.statusName}}</td>
+			                  <td>￥{{item.totalFee/100}}</td>
+			                  <td class="text-right">
+			                    <button type="button" (click)="showDeviceUpdateModal(true,item);" class="btn btn-sm btn-primary">
+			                      <i class="fa fa-pencil-square-o"></i>
+			                    </button>
+			                  </td>
+			                </tr>
+		              	</tbody>
+	            	</table>            
+	            	<pagination [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></pagination>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="card card-inverse text-center" style="height: 348px;">
+
+		    </div> 
+
+		    <div class="panel panel-default">
+				<div class="product-list-hd">新产品发布
+				</div>
+				<ul class="product-list">
+					<li *ngFor="let product of productList">
+						<i class="product-icons-48 product-list-icon" [ngClass]="product.icon"></i>
+						<div class="product-list-right">
+							<div class="product-list-title	">
+								<a>{{product.productName}}</a>
+							</div>
+							<p class="product-list-subtitle">{{product.desc}}</p>
+						</div>
+					</li>
+				</ul>
+		    </div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<div bsModal #productModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lm" role="document">
+    <div class="modal-content">
+        <div class="product-info">
+	      <div class="modal-header">
+	        <h4 class="modal-title">产品详情</h4>
+	        <button type="button" class="close" (click)="productModal.hide()" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <div class="info-div">
+				<div>
+					<div class="img-div">
+						<i class="product-icons-48 product-list-icon" [ngClass]="product.productIcon"></i>
+					</div>
+					<div class="txt-div">
+						<h4>{{product.productName}}</h4>
+						<div *ngIf="!product.purchased">实价: ¥ {{product.productPrice/100 || 0 }} / {{product.discount}} 
+					</div>
+				</div>
+				<div>
+					<h4 class="title3">产品信息</h4>
+					<div>{{product.productDesc}}</div>
+					<br>
+				</div>
+				<div *ngIf="product.productPackageList != null">
+					<h4 class="title3">产品配置</h4>
+					<div class="paramter" *ngFor="let package of product.productPackageList;let i=index" #pk>
+						<div class="button" *ngFor="let item of package.productItemList" (click)="itemClick(item.productItemId,package.productPackageId)" #productItem
+							[ngClass]="{active:item.checked}">
+							{{item.productItemName}}  
+						</div>
+					</div>
+				</div>	
+			</div>
+	      </div>
+	    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="productModal.hide()">取消</button>
+        <button type="button" class="btn btn-primary" (click)="submitCart(product)">确认</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,304 @@
+<style type="text/css">
+	.room-img
+	{
+	    width: 50%; height: 80%;
+	}
+
+	.txt_header
+	{
+	    width: 110px; height: 20px;
+	}
+
+	.txt_block
+	{
+	    width: 40px; height: 30px;
+	}
+
+	.img_info
+	{
+	    width: 71px; height: 60px;
+	}
+	
+	.evaluate_header
+	{
+		width: 100px; height: 20px; 
+	}
+
+	.evaluate_body
+	{
+		width: 280px; height: 90px; 
+	}
+
+	.hall_header
+	{
+		width: 150px; height: 20px; position: absolute; top: 50%; left: 18%; font-size: 12px; font-weight: bold; text-align: left; color: rgb(0, 0, 0); word-break: break-word;
+	}
+
+	.hall_block
+	{
+		width: 30px; height: 30px; position: absolute; top: 48%; left: 23.5%; font-size: 24px; font-weight: bold; text-align: left; color: rgb(0, 0, 0); word-break: break-word;
+	}
+
+	.hall_status
+	{
+		width: 71px; height: 60px;position: absolute; top: 29%; left: 14.5%;
+		display: block; max-width: 100%; max-height: 100%;
+	}
+
+	.office_header
+	{
+		position: absolute; top: 60%; left: 38%; font-size: 12px; font-weight: bold; text-align: left; color: rgb(0, 0, 0); word-break: break-word;
+	}
+
+	.office_block
+	{
+		position: absolute; top: 58.3%; left: 44.2%; font-size: 24px; font-weight: bold; text-align: left; color: rgb(0, 0, 0); word-break: break-word;
+	}
+
+	.office_status
+	{
+		width: 60px; height: 50px;position: absolute; top: 75%; left: 41%;
+		display: block; max-width: 100%; max-height: 100%;
+	}
+
+	.meeting_header
+	{
+		width: 110px; height: 20px;
+		top: 13%; left:8%; position: absolute; 
+		font-size: 12px; font-weight: bold; text-align: left; color: rgb(0, 0, 0); word-break: break-word;
+	}
+
+	.meeting_block
+	{
+		width: 40px; height: 30px;
+		position: absolute; top: 11%; left:14%; font-size: 24px;font-weight: bold; text-align: left; color: rgb(0, 0, 0); word-break: break-word;
+	}
+
+	.meeting_status
+	{
+		width: 71px; height: 60px;position: absolute; top: 80%; left: 23%;
+	}
+</style>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          室内环境监测
+        </div>
+       	<div class="card-block">
+	      <div class="preview room-img" style="top: 60px;">
+	        <img src="./img/room.png" style="display: block; max-width: 100%; max-height: 100%;">
+	      </div>
+<!-- 	      <div class="preview room-img" style="top: 60px;top: 1059.97px; left: 506.469px;">
+	        <img src="./img/room.png" style="display: block; max-width: 100%; max-height: 100%;">
+	      </div> -->
+	      <div class="preview hall_block">
+	        {{hall.score}}
+	      </div>
+	<!--       <div class="preview" style="width: 390px; height: 40px; position: absolute; top: 0px; left: 746.5px; font-size: 36px; font-weight: bold; text-align: center; color: rgb(51, 51, 0); word-break: break-word;">
+	        室内环境评估系统
+	      </div> -->
+	      <div class="preview hall_header" >
+	      大厅综合评分：
+	      </div>
+	      <div class="preview hall_status">
+	        <img src="./img/status_sad.gif" data-photo="0" style="display: block; max-width: 100%; max-height: 100%;">
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381289" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 650px; left: 460.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+	          </canvas>
+	        </div>
+	        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: &quot;Microsoft YaHei&quot;; line-height: 21px; padding: 5px; left: 124.625px; top: 42px;">
+	          12-21 03:53:08<br>
+	          <span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgb(153, 204, 255)"></span>
+	            温度 : 18
+	        </div>
+	      </div>
+	      <div class="preview meeting_header" style="">
+	        会议室综合评分：
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381290" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 650px; left: 697.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+	          </canvas>
+	        </div>
+	        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: &quot;Microsoft YaHei&quot;; line-height: 21px; padding: 5px; left: 59.125px; top: 40px;">
+	          12-21 03:53:58<br>
+	          <span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgb(153, 204, 255)"></span>
+	            CO2浓度 : 1,320
+	        </div>
+	      </div>
+	      <div class="preview meeting_block" style="">
+	        0
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381291" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 653px; left: 936.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+	          </canvas>
+	        </div>
+	        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: &quot;Microsoft YaHei&quot;; line-height: 21px; padding: 5px; left: 83.225px; top: 89px;">
+	          12-21 03:52:48<br>
+	          <span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgb(153, 204, 255)">
+	          </span>
+	          光照 : 13,833
+	        </div>
+	      </div>
+	      <div class="preview meeting_status" style="">
+	      	<img src="./img/status_sad.gif" data-photo="0" style="display: block; max-width: 100%; max-height: 100%;">
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381292" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 650px; left: 1177.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+	          </canvas>
+	        </div>
+	        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: &quot;Microsoft YaHei&quot;; line-height: 21px; padding: 5px; left: 37.725px; top: 56px;">
+	          12-21 03:53:38<br>
+	          <span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgb(153, 204, 255)"></span>
+	            湿度 : 61
+	        </div>
+	      </div>
+	      <div class="preview office_header" style="">
+	        办公室综合评分：
+	      </div>
+	      <div class="preview office_block" style="">
+	        10
+	      </div>
+	      <div class="previe office_status" style="">
+	        <img src="./img/status_sad.gif" data-photo="0" style="display: block; max-width: 100%; max-height: 100%;">
+	      </div>
+	      <div class="preview evaluate_header" style="position: absolute; top: 15%; left: 60%; font-size: 24px; text-align: center; color: rgb(0, 0, 0); word-break: break-word;">
+	        办公室
+	      </div>
+	      <div class="preview evaluate_body" style="position: absolute; top: 35%; left: 60%; font-size: 16px; text-align: left; color: rgb(0, 0, 0); word-break: break-word;">
+	          ● 大厅现在 CO2浓度太低了，这样不适合植物的生长。太冷了，注意保暖哟。湿度非常令人舒适。
+	      </div>
+	      <div class="preview evaluate_header" style="position: absolute; top: 29%; left: 59.5%; font-size: 24px; text-align: center; color: rgb(0, 0, 0); word-break: break-word;">
+	        大厅
+	      </div>
+	      <div class="preview evaluate_body" style="width: 280px; height: 100px; position: absolute; top: 53%; left: 60%; font-size: 16px; text-align: left; color: rgb(0, 0, 0); word-break: break-word;">
+	          ● 会议室现在光太暗了，才不适合阅读呢，注意保护眼睛哦。
+	      </div>
+	      <div class="preview evaluate_body" style="width: 280px; height: 90px; position: absolute; top: 21%; left: 60%; font-size: 16px; text-align: left; color: rgb(0, 0, 0); word-break: break-word;">
+	          ● 办公室现在空气太潮湿了，研究表明湿度太高会让人无精打采哦。
+	      </div>
+	      <div class="preview" style="width: 100px; height: 30px; position: absolute; top: 46%; left: 60%; font-size: 24px; text-align: center; color: rgb(0, 0, 0); word-break: break-word;">
+	        会议室
+	      </div>
+<!-- 	      <div class="preview" style="width: 100px; height: 30px; position: absolute; top: 620px; left: 896.5px; font-size: 24px; text-align: center; color: rgb(0, 0, 0); word-break: break-word;">
+	        大厅
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381293" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 850px; left: 456.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: &quot;Microsoft YaHei&quot;; line-height: 21px; padding: 5px; left: 79.125px; top: 100px;">
+	          07-29 14:19:24<br>
+	          <span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgb(153, 204, 255)"></span>
+	            温度 : 27
+	        </div>
+	      </div>
+	      <div class="preview" style="width: 100px; height: 30px; position: absolute; top: 820px; left: 896.5px; font-size: 24px; text-align: center; color: rgb(0, 0, 0); word-break: break-word;">
+	        办公室
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381294" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 1049px; left: 455.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div></div>
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381295" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 850px; left: 696.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div></div>
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381296" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 850px; left: 936.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: &quot;Microsoft YaHei&quot;; line-height: 21px; padding: 5px; left: 17.025px; top: 30px;">
+	          08-02 11:43:54<br>
+	          <span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgb(153, 204, 255)"></span>
+	            光照 : 5,561
+	        </div>
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381297" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 850px; left: 1176.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px; cursor: default;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: &quot;Microsoft YaHei&quot;; line-height: 21px; padding: 5px; left: 72.875px; top: 51px;">
+	          07-29 14:18:48<br>
+	          <span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgb(153, 204, 255)"></span>
+	            湿度 : 44
+	        </div>
+	      </div>
+	      <div class="preview" style="width: 100px; height: 30px; position: absolute; top: 1020px; left: 896.5px; font-size: 24px; text-align: center; color: rgb(0, 0, 0); word-break: break-word;">
+	        会议室
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381298" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 1050px; left: 696.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div></div>
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381299" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 1050px; left: 1176.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div></div>
+	      </div>
+	      <div class="preview" _echarts_instance_="ec_1509591381300" style="width: 270px; height: 160px; -webkit-tap-highlight-color: transparent; user-select: none; position: absolute; top: 1050px; left: 936.5px; background: transparent;">
+	        <div style="position: relative; overflow: hidden; width: 270px; height: 160px;">
+	          <canvas width="270" height="160" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 270px; height: 160px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+	        </div>
+	        <div></div>
+	      </div> -->
+	    </div>
+	  </div>
+    </div><!--/.col-->
+  </div><!--/.row-->
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 #tempChart></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 #humChart></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 #pm25Chart></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--   <div class="row">
+    <div class="col-md-12">
+      <div class="card card-inverse text-center">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <echarts-ng2 [option]="option"></echarts-ng2>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

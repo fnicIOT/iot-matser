@@ -1,0 +1,70 @@
+<style>
+	.ui-select-match {
+		width: 300px;
+	}
+</style>
+<div class="animated fadeIn">
+  <div class="col-lg-12">
+    <div class="row">
+    	<div class="tab-panel col-lg-9">
+	    	<div class="panel panel-default" style="height: 348px;">
+			  <div class="panel-heading">
+			    <h4 class="panel-title">购买弹性带宽
+				<a class="btn btn-sm btn-default btn-secondary" [routerLink]="['/order/order']">返回</a>
+			    </h4>
+			    
+			  </div>
+			  <div class="panel-body">
+			  	<div class="form-horizontal">
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">当前带宽</label>
+					    <label style="color: orange; font-size: 18px;margin-left: 15px;">60M</label>
+					</div>
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">选择时间</label>
+					    <div class="col-sm-5" style="display: -webkit-inline-box;">
+						    <input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="mydate"
+			               [(ngModel)]="startTime" [options]="dateOptions" #dp="ngx-mydatepicker" (dateChanged)="onDateChanged($event)"/>
+		    		        <span class="btn-group">
+		    		            <button type="button" class="btn btn-primary" (click)="dp.clearDate()">
+		    		                <i class="fa fa-close fa-lg"></i>
+		    		            </button>
+		    		            <button type="button" class="btn btn-primary" (click)="dp.toggleCalendar()">
+		    		                <i class="fa fa-calendar fa-lg"></i>
+		    		            </button>
+		    		        </span>
+					    </div>					    
+					</div>
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">额外带宽</label>
+					    <ng-select [allowClear]="true"
+			                            [items]="bandSelect"
+			                            [active]='[bandSelect[0]]'
+			                            placeholder="" style="display: -webkit-inline-box;margin-left: 15px;">
+				        </ng-select>
+					</div>
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">购买后后带宽为
+					    </label>
+					    <label style="color: orange; font-size: 18px;margin-left: 15px;">70M</label>
+					</div>
+			  	</div>
+			  </div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+		    <div class="panel panel-default" style="height: 348px;">
+				<div class="row">
+					<div class="col-md-4" style="color: #449d44">
+						<i class="fa fa-shopping-cart fa-3x"></i>
+					</div>
+					<div class="col-md-8 ng-binding" style="color: orange; margin-top: 5px; font-size: 20px; font-weight: bold">共  ¥68</div>
+					<div class="col-md-12 text-align-center">
+						<button class="btn btn-info" ng-click="addToCart()" ng-disabled="!vm.couldSubmit || vm.vpcForm.$invalid">加入购物车</button>
+					</div>	
+				</div>
+		    </div>
+		</div>
+	</div>
+  </div>
+</div>

@@ -1,0 +1,1382 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>README</title></head><body><article class="markdown-body"><p align="center">
+  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals?utm_source=github-angular2-webpack-starter&utm_medium=open-source&utm_campaign=webpackstarter" target="_blank">
+    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
+  </a>
+</p>
+
+<hr />
+<p><a href="https://twitter.com/SwiftOnSecurity"><img alt="taylor swift" src="https://img.shields.io/badge/secured%20by-taylor%20swift-brightgreen.svg" /></a><br />
+<a href="https://github.com/auchenberg/volkswagen"><img alt="volkswagen status" src="https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1" /></a><br />
+<a href="https://travis-ci.org/AngularClass/angular2-webpack-starter"><img alt="Build Status" src="https://travis-ci.org/AngularClass/angular2-webpack-starter.svg?branch=master" /></a><br />
+<a href="https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter"><img alt="GitHub version" src="https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter.svg" /></a><br />
+<a href="https://david-dm.org/angularclass/angular2-webpack-starter"><img alt="Dependency Status" src="https://david-dm.org/angularclass/angular2-webpack-starter.svg" /></a><br />
+<a href="http://stackshare.io/angularclass/angular-2-webpack-starter"><img alt="Stack Share" src="http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat" /></a></p>
+<p align="center">
+  <a href="https://angularclass.com" target="_blank">
+    <img src="https://cloud.githubusercontent.com/assets/1016365/9863762/a84fed4a-5af7-11e5-9dde-d5da01e797e7.png" alt="Webpack and Angular 2" width="500" height="320"/>
+  </a>
+</p>
+
+<h1 id="angular2-webpack-starter"><a name="user-content-angular2-webpack-starter" href="#angular2-webpack-starter" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Angular2 Webpack Starter <a href="https://angularclass.com/slack-join"><img alt="Join Slack" src="https://img.shields.io/badge/slack-join-brightgreen.svg" /></a> <a href="https://gitter.im/angularclass/angular2-webpack-starter?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/angularclass/angular2-webpack-starter" src="https://badges.gitter.im/Join%20Chat.svg" /></a></h1>
+<blockquote>
+<p>An Angular 2 starter kit featuring <a href="https://angular.io">Angular 2</a> and <a href="https://github.com/angular/angular/tree/4.0.0-beta.0">Angular 4</a> (<a href="https://angular.io/docs/ts/latest/cookbook/aot-compiler.html">Ahead of Time Compile</a>, <a href="https://angular.io/docs/ts/latest/guide/router.html">Router</a>, <a href="https://angular.io/docs/ts/latest/guide/forms.html">Forms</a>,<br />
+<a href="https://angular.io/docs/ts/latest/guide/server-communication.html">Http</a>,<br />
+<a href="https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter">Services</a>,<br />
+<a href="https://angular.io/docs/ts/latest/guide/testing.html">Tests</a>, <a href="https://angular.github.io/protractor/#/faq#what-s-the-difference-between-karma-and-protractor-when-do-i-use-which-">E2E</a>), <a href="https://karma-runner.github.io/">Karma</a>, <a href="https://angular.github.io/protractor/">Protractor</a>, <a href="https://github.com/jasmine/jasmine">Jasmine</a>, <a href="https://github.com/gotwarlost/istanbul">Istanbul</a>, <a href="http://www.typescriptlang.org/">TypeScript</a>, <a href="https://www.npmjs.com/~types">@types</a>, <a href="http://palantir.github.io/tslint/">TsLint</a>, <a href="https://github.com/mgechev/codelyzer">Codelyzer</a>, <a href="https://webpack.github.io/docs/hot-module-replacement-with-webpack.html">Hot Module Replacement</a>, and <a href="http://webpack.github.io/">Webpack 2</a> by <a href="https://angularclass.com">AngularClass</a>.</p>
+<p>If you&rsquo;re looking for Angular 1.x please use <a href="https://github.com/angularclass/NG6-starter">NG6-starter</a><br />
+If you&rsquo;re looking to learn about Webpack and ES6 Build Tools check out <a href="https://github.com/AngularClass/ES6-build-tools">ES6-build-tools</a><br />
+If you&rsquo;re looking to learn TypeScript see <a href="https://github.com/TypeStrong/learn-typescript">TypeStrong/learn-typescript</a><br />
+If you&rsquo;re looking for something easier to get started with then see the angular2-seed that I also maintain <a href="https://github.com/AngularClass/angular2-seed">angular/angular2-seed</a></p>
+</blockquote>
+<p>This seed repo serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast. Using a <a href="http://webpack.github.io/">Webpack 2</a> for building our files and assisting with boilerplate. We&rsquo;re also using Protractor for our end-to-end story and Karma for our unit tests.<br />
+<em> Best practices in file and application organization for Angular 2.<br />
+</em> Ready to go build system using Webpack for working with TypeScript.<br />
+<em> Angular 2 examples that are ready to go when experimenting with Angular 2.<br />
+</em> A great Angular 2 seed repo for anyone who wants to start their project.<br />
+<em> Ahead of Time (AoT) compile for rapid page loads of your production builds.<br />
+</em> Tree shaking to automatically remove unused code from your production bundle.<br />
+<em> <a href="https://robertknight.github.io/posts/webpack-dll-plugins/">Webpack DLLs</a> dramatically speed your development builds.<br />
+</em> Testing Angular 2 code with Jasmine and Karma.<br />
+<em> Coverage with Istanbul and Karma<br />
+</em> End-to-end Angular 2 code using Protractor.<br />
+<em> Type manager with @types<br />
+</em> Hot Module Replacement with Webpack and <a href="https://github.com/angularclass/angular2-hmr">@angularclass/hmr</a> and <a href="https://github.com/angularclass/angular2-hmr-loader">@angularclass/hmr-loader</a><br />
+<em> Material Design with <a href="https://github.com/angular/material2">angular/material2</a><br />
+</em> Angular 4 support via changing package.json and any future Angular versions</p>
+<h3 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick start</h3>
+<p><strong>Make sure you have Node version &gt;= 5.0 and NPM &gt;= 3</strong></p>
+<blockquote>
+<p>Clone/Download the repo then edit <code>app.component.ts</code> inside <a href="/src/app/app.component.ts"><code>/src/app/app.component.ts</code></a></p>
+</blockquote>
+<p><pre><code class="bash"># clone our repo
+# --depth 1 removes all but one .git commit history
+git clone --depth 1 https://github.com/angularclass/angular2-webpack-starter.git
+
+# change directory to our repo
+cd angular2-webpack-starter
+
+# install the repo with npm
+npm install
+
+# start the server
+npm start
+
+# use Hot Module Replacement
+npm run server:dev:hmr
+
+# if you're in China use cnpm
+# https://github.com/cnpm/cnpm
+</code></pre><br />
+go to <a href="http://0.0.0.0:3000"><a href="http://0.0.0.0:3000"><a href="http://0.0.0.0:3000">http://0.0.0.0:3000</a></a></a> or <a href="http://localhost:3000"><a href="http://localhost:3000"><a href="http://localhost:3000">http://localhost:3000</a></a></a> in your browser</p>
+<h1 id="table-of-contents"><a name="user-content-table-of-contents" href="#table-of-contents" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Table of Contents</h1>
+<ul>
+<li><a href="#file-structure">File Structure</a></li>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#installing">Installing</a></li>
+<li><a href="#running-the-app">Running the app</a></li>
+</ul>
+</li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#aot-donts">AoT Don&rsquo;ts</a></li>
+<li><a href="#external-stylesheets">External Stylesheets</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#typescript">TypeScript</a></li>
+<li><a href="#types">@Types</a></li>
+<li><a href="#frequently-asked-questions">Frequently asked questions</a></li>
+<li><a href="#support-questions-or-feedback">Support, Questions, or Feedback</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="file-structure"><a name="user-content-file-structure" href="#file-structure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>File Structure</h2>
+<p>We use the component approach in our starter. This is the new standard for developing Angular apps and a great way to ensure maintainable code by encapsulation of our behavior logic. A component is basically a self contained app usually in a single file or a folder with each concern as a file: style, template, specs, e2e, and component class. Here&rsquo;s how it looks:<br />
+<pre><code>angular2-webpack-starter/
+ ├──config/                        * our configuration
+ |   ├──helpers.js                 * helper functions for our configuration files
+ |   ├──spec-bundle.js             * ignore this magic that sets up our angular 2 testing environment
+ |   ├──karma.conf.js              * karma config for our unit tests
+ |   ├──protractor.conf.js         * protractor config for our end-to-end tests
+ │   ├──webpack.dev.js             * our development webpack config
+ │   ├──webpack.prod.js            * our production webpack config
+ │   └──webpack.test.js            * our testing webpack config
+ │
+ ├──src/                           * our source files that will be compiled to javascript
+ |   ├──main.browser.ts            * our entry file for our browser environment
+ │   │
+ |   ├──index.html                 * Index.html: where we generate our index page
+ │   │
+ |   ├──polyfills.ts               * our polyfills file
+ │   │
+ │   ├──app/                       * WebApp: folder
+ │   │   ├──app.component.spec.ts  * a simple test of components in app.component.ts
+ │   │   ├──app.e2e.ts             * a simple end-to-end test for /
+ │   │   └──app.component.ts       * a simple version of our App component components
+ │   │
+ │   └──assets/                    * static assets are served here
+ │       ├──icon/                  * our list of icons from www.favicon-generator.org
+ │       ├──service-worker.js      * ignore this. Web App service worker that's not complete yet
+ │       ├──robots.txt             * for search engines to crawl your website
+ │       └──humans.txt             * for humans to know who the developers are
+ │
+ │
+ ├──tslint.json                    * typescript lint config
+ ├──typedoc.json                   * typescript documentation generator
+ ├──tsconfig.json                  * typescript config used outside webpack
+ ├──tsconfig.webpack.json          * config that webpack uses for typescript
+ ├──package.json                   * what npm uses to manage it's dependencies
+ └──webpack.config.js              * webpack main configuration file
+
+</code></pre></p>
+<h1 id="getting-started"><a name="user-content-getting-started" href="#getting-started" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started</h1>
+<h2 id="dependencies"><a name="user-content-dependencies" href="#dependencies" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependencies</h2>
+<p>What you need to run this app:<br />
+<em> <code>node</code> and <code>npm</code> (<code>brew install node</code>)<br />
+</em> Ensure you&rsquo;re running the latest versions Node <code>v4.x.x</code>+ (or <code>v5.x.x</code>) and NPM <code>3.x.x</code>+</p>
+<blockquote>
+<p>If you have <code>nvm</code> installed, which is highly recommended (<code>brew install nvm</code>) you can do a <code>nvm install --lts &amp;&amp; nvm use</code> in <code>$</code> to run with the latest Node LTS. You can also have this <code>zsh</code> done for you <a href="https://github.com/creationix/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file">automatically</a> </p>
+</blockquote>
+<p>Once you have those, you should install these globals with <code>npm install --global</code>:<br />
+<em> <code>webpack</code> (<code>npm install --global webpack</code>)<br />
+</em> <code>webpack-dev-server</code> (<code>npm install --global webpack-dev-server</code>)<br />
+<em> <code>karma</code> (<code>npm install --global karma-cli</code>)<br />
+</em> <code>protractor</code> (<code>npm install --global protractor</code>)<br />
+* <code>typescript</code> (<code>npm install --global typescript</code>)</p>
+<h2 id="installing"><a name="user-content-installing" href="#installing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing</h2>
+<ul>
+<li><code>fork</code> this repo</li>
+<li><code>clone</code> your fork</li>
+<li><code>npm install webpack-dev-server rimraf webpack -g</code> to install required global dependencies</li>
+<li><code>npm install</code> to install all dependencies or <code>yarn</code></li>
+<li><code>npm run server</code> to start the dev server in another tab</li>
+</ul>
+<h2 id="running-the-app"><a name="user-content-running-the-app" href="#running-the-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Running the app</h2>
+<p>After you have installed all dependencies you can now run the app. Run <code>npm run server</code> to start a local server using <code>webpack-dev-server</code> which will watch, build (in-memory), and reload for you. The port will be displayed to you as <code>http://0.0.0.0:3000</code> (or if you prefer IPv6, if you&rsquo;re using <code>express</code> server, then it&rsquo;s <code>http://[::1]:3000/</code>).</p>
+<h3 id="server"><a name="user-content-server" href="#server" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>server</h3>
+<pre><code class="bash"># development
+npm run server
+# production
+npm run build:prod
+npm run server:prod
+</code></pre>
+
+<h2 id="other-commands"><a name="user-content-other-commands" href="#other-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other commands</h2>
+<h3 id="build-files"><a name="user-content-build-files" href="#build-files" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>build files</h3>
+<pre><code class="bash"># development
+npm run build:dev
+# production (jit)
+npm run build:prod
+# AoT
+npm run build:aot
+</code></pre>
+
+<h3 id="hot-module-replacement"><a name="user-content-hot-module-replacement" href="#hot-module-replacement" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hot module replacement</h3>
+<pre><code class="bash">npm run server:dev:hmr
+</code></pre>
+
+<h3 id="watch-and-build-files"><a name="user-content-watch-and-build-files" href="#watch-and-build-files" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>watch and build files</h3>
+<pre><code class="bash">npm run watch
+</code></pre>
+
+<h3 id="run-unit-tests"><a name="user-content-run-unit-tests" href="#run-unit-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>run unit tests</h3>
+<pre><code class="bash">npm run test
+</code></pre>
+
+<h3 id="watch-and-run-our-tests"><a name="user-content-watch-and-run-our-tests" href="#watch-and-run-our-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>watch and run our tests</h3>
+<pre><code class="bash">npm run watch:test
+</code></pre>
+
+<h3 id="run-end-to-end-tests"><a name="user-content-run-end-to-end-tests" href="#run-end-to-end-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>run end-to-end tests</h3>
+<pre><code class="bash"># update Webdriver (optional, done automatically by postinstall script)
+npm run webdriver:update
+# this will start a test server and launch Protractor
+npm run e2e
+</code></pre>
+
+<h3 id="continuous-integration-run-unit-tests-and-e2e-tests-together"><a name="user-content-continuous-integration-run-unit-tests-and-e2e-tests-together" href="#continuous-integration-run-unit-tests-and-e2e-tests-together" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>continuous integration (run unit tests and e2e tests together)</h3>
+<pre><code class="bash"># this will test both your JIT and AoT builds
+npm run ci
+</code></pre>
+
+<h3 id="run-protractors-elementexplorer-for-end-to-end"><a name="user-content-run-protractors-elementexplorer-for-end-to-end" href="#run-protractors-elementexplorer-for-end-to-end" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>run Protractor&rsquo;s elementExplorer (for end-to-end)</h3>
+<pre><code class="bash">npm run e2e:live
+</code></pre>
+
+<h3 id="build-docker"><a name="user-content-build-docker" href="#build-docker" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>build Docker</h3>
+<pre><code class="bash">npm run build:docker
+</code></pre>
+
+<h1 id="configuration"><a name="user-content-configuration" href="#configuration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuration</h1>
+<p>Configuration files live in <code>config/</code> we are currently using webpack, karma, and protractor for different stages of your application</p>
+<h1 id="aot-donts"><a name="user-content-aot-donts" href="#aot-donts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>AoT Don&rsquo;ts</h1>
+<p>The following are some things that will make AoT compile fail.</p>
+<ul>
+<li>Don’t use require statements for your templates or styles, use styleUrls and templateUrls, the angular2-template-loader plugin will change it to require at build time.</li>
+<li>Don’t use default exports.</li>
+<li>Don’t use <code>form.controls.controlName</code>, use <code>form.get(‘controlName’)</code></li>
+<li>Don’t use <code>control.errors?.someError</code>, use <code>control.hasError(‘someError’)</code></li>
+<li>Don’t use functions in your providers, routes or declarations, export a function and then reference that function name</li>
+<li>@Inputs, @Outputs, View or Content Child(ren), Hostbindings, and any field you use from the template or annotate for Angular should be public</li>
+</ul>
+<h1 id="external-stylesheets"><a name="user-content-external-stylesheets" href="#external-stylesheets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>External Stylesheets</h1>
+<p>Any stylesheets (Sass or CSS) placed in the <code>src/styles</code> directory and imported into your project will automatically be compiled into an external <code>.css</code> and embedded in your production builds.</p>
+<p>For example to use Bootstrap as an external stylesheet:<br />
+1) Create a <code>styles.scss</code> file (name doesn&rsquo;t matter) in the <code>src/styles</code> directory.<br />
+2) <code>npm install</code> the version of Boostrap you want.<br />
+3) In <code>styles.scss</code> add <code>@import 'bootstrap/scss/bootstrap.scss';</code><br />
+4) In <code>src/app/app.module.ts</code> add underneath the other import statements: <code>import '../styles/styles.scss';</code></p>
+<h1 id="contributing"><a name="user-content-contributing" href="#contributing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Contributing</h1>
+<p>You can include more examples as components but they must introduce a new concept such as <code>Home</code> component (separate folders), and Todo (services). I&rsquo;ll accept pretty much everything so feel free to open a Pull-Request</p>
+<h1 id="typescript"><a name="user-content-typescript" href="#typescript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TypeScript</h1>
+<blockquote>
+<p>To take full advantage of TypeScript with autocomplete you would have to install it globally and use an editor with the correct TypeScript plugins.</p>
+</blockquote>
+<h2 id="use-latest-typescript-compiler"><a name="user-content-use-latest-typescript-compiler" href="#use-latest-typescript-compiler" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use latest TypeScript compiler</h2>
+<p>TypeScript 2.1.x includes everything you need. Make sure to upgrade, even if you installed TypeScript previously.</p>
+<pre><code>npm install --global typescript
+</code></pre>
+
+<h2 id="use-a-typescript-aware-editor"><a name="user-content-use-a-typescript-aware-editor" href="#use-a-typescript-aware-editor" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a TypeScript-aware editor</h2>
+<p>We have good experience using these editors:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+<li><a href="https://www.jetbrains.com/webstorm/download/">Webstorm 10</a></li>
+<li><a href="https://atom.io/">Atom</a> with <a href="https://atom.io/packages/atom-typescript">TypeScript plugin</a></li>
+<li><a href="http://www.sublimetext.com/3">Sublime Text</a> with <a href="https://github.com/Microsoft/Typescript-Sublime-plugin#installation">Typescript-Sublime-Plugin</a></li>
+</ul>
+<h3 id="visual-studio-code-debugger-for-chrome"><a name="user-content-visual-studio-code-debugger-for-chrome" href="#visual-studio-code-debugger-for-chrome" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Visual Studio Code + Debugger for Chrome</h3>
+<blockquote>
+<p>Install <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome">Debugger for Chrome</a> and see docs for instructions to launch Chrome </p>
+</blockquote>
+<p>The included <code>.vscode</code> automatically connects to the webpack development server on port <code>3000</code>.</p>
+<h1 id="types"><a name="user-content-types" href="#types" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Types</h1>
+<blockquote>
+<p>When you include a module that doesn&rsquo;t include Type Definitions inside of the module you can include external Type Definitions with @types</p>
+</blockquote>
+<p>i.e, to have youtube api support, run this command in terminal: <br />
+<pre><code class="shell">npm i @types/youtube @types/gapi @types/gapi.youtube
+</code></pre><br />
+In some cases where your code editor doesn&rsquo;t support Typescript 2 yet or these types weren&rsquo;t listed in <code>tsconfig.json</code>, add these to <strong>&ldquo;src/custom-typings.d.ts&rdquo;</strong> to make peace with the compile check: <br />
+<pre><code class="es6">import '@types/gapi.youtube';
+import '@types/gapi';
+import '@types/youtube';
+</code></pre></p>
+<h2 id="custom-type-definitions"><a name="user-content-custom-type-definitions" href="#custom-type-definitions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Custom Type Definitions</h2>
+<p>When including 3rd party modules you also need to include the type definition for the module<br />
+if they don&rsquo;t provide one within the module. You can try to install it with @types</p>
+<pre><code>npm install @types/node
+npm install @types/lodash
+</code></pre>
+
+<p>If you can&rsquo;t find the type definition in the registry we can make an ambient definition in<br />
+this file for now. For example</p>
+<pre><code class="typescript">declare module &quot;my-module&quot; {
+  export function doesSomething(value: string): string;
+}
+</code></pre>
+
+<p>If you&rsquo;re prototyping and you will fix the types later you can also declare it as type any</p>
+<pre><code class="typescript">declare var assert: any;
+declare var _: any;
+declare var $: any;
+</code></pre>
+
+<p>If you&rsquo;re importing a module that uses Node.js modules which are CommonJS you need to import as</p>
+<pre><code class="typescript">import * as _ from 'lodash';
+</code></pre>
+
+<h1 id="frequently-asked-questions"><a name="user-content-frequently-asked-questions" href="#frequently-asked-questions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Frequently asked questions</h1>
+<ul>
+<li>What&rsquo;s the current browser support for Angular 2?</li>
+<li>Please view the updated list of <a href="https://github.com/angularclass/awesome-angular2#current-browser-support-for-angular-2">browser support for Angular 2</a></li>
+<li>Why is my service, aka provider, is not injecting parameter correctly?</li>
+<li>Please use <code>@Injectable()</code> for your service for typescript to correctly attach the metadata (this is a TypeScript problem)</li>
+<li>How do I run protractor with node 0.12.x?</li>
+<li>please check out this repo to use the old version of protractor <a href="https://github.com/AngularClass/angular2-webpack-starter/pull/146/files">#146</a></li>
+<li>Where do I write my tests?</li>
+<li>You can write your tests next to your component files. See <a href="/src/app/home/home.component.spec.ts"><code>/src/app/home/home.component.spec.ts</code></a></li>
+<li>How do I start the app when I get <code>EACCES</code> and <code>EADDRINUSE</code> errors?</li>
+<li>The <code>EADDRINUSE</code> error means the port <code>3000</code> is currently being used and <code>EACCES</code> is lack of permission for webpack to build files to <code>./dist/</code></li>
+<li>How to use <code>sass</code> for css?</li>
+<li>
+<ul>
+<li><code>loaders: ['raw-loader','sass-loader']</code> and <code>@Component({ styleUrls: ['./filename.scss'] })</code> see Wiki page <a href="https://github.com/AngularClass/angular2-webpack-starter/wiki/How-to-include-SCSS-in-components">How to include SCSS in components</a>, or issue <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/136">#136</a> for more information.</li>
+</ul>
+</li>
+<li>How do I test a Service?</li>
+<li>See issue <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/130#issuecomment-158872648">#130</a></li>
+<li>How do I add <code>vscode-chrome-debug</code> support?</li>
+<li>The VS Code chrome debug extension support can be done via <code>launch.json</code> see issue <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/144#issuecomment-164063790">#144</a></li>
+<li>How do I make the repo work in a virtual machine?</li>
+<li>You need to use <code>0.0.0.0</code> so revert these changes <a href="https://github.com/AngularClass/angular2-webpack-starter/pull/205/files">#205</a></li>
+<li>What are the naming conventions for Angular 2?</li>
+<li>please see issue <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/185">#185</a> and PR <a href="https://github.com/AngularClass/angular2-webpack-starter/pull/196">196</a></li>
+<li>How do I include bootstrap or jQuery?</li>
+<li>please see issue <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/215">#215</a> and <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/214#event-511768416">#214</a></li>
+<li>How do I async load a component?</li>
+<li>see wiki <a href="https://github.com/AngularClass/angular2-webpack-starter/wiki/How-do-I-async-load-a-component-with-AsyncRoute">How-do-I-async-load-a-component-with-AsyncRoute</a></li>
+<li>Error: Cannot find module &lsquo;tapable&rsquo;</li>
+<li>Remove <code>node_modules/</code> and run <code>npm cache clean</code> then <code>npm install</code></li>
+<li>How do I turn on Hot Module Replacement</li>
+<li>Run <code>npm run server:dev:hmr</code></li>
+<li><code>RangeError: Maximum call stack size exceeded</code></li>
+<li>This is a problem with minifying Angular 2 and it&rsquo;s recent JIT templates. If you set <code>mangle</code> to <code>false</code> then you should be good.</li>
+<li>Why is the size of my app larger in development?</li>
+<li>We are using inline source-maps and hot module replacement which will increase the bundle size.</li>
+<li>If you&rsquo;re in China</li>
+<li>check out <a href="https://github.com/cnpm/cnpm">https://github.com/cnpm/cnpm</a></li>
+<li>If you&rsquo;re looking to add Angular 2 Material Design</li>
+<li>check out the <a href="https://github.com/AngularClass/angular2-webpack-starter/tree/material2">material2</a> branch</li>
+<li>node-pre-gyp ERR in npm install (Windows)</li>
+<li>install Python x86 version between 2.5 and 3.0 on windows see issue <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/626">#626</a></li>
+<li><code>Error:Error: Parse tsconfig error [{"messageText":"Unknown compiler option 'lib'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'strictNullChecks'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'baseUrl'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'paths'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'types'.","category":1,"code":5023}]</code></li>
+<li>remove <code>node_modules/typescript</code> and run <code>npm install typescript@beta</code>. This repo now uses ts 2.0 </li>
+<li>&ldquo;There are multiple modules with names that only differ in casing&rdquo;</li>
+<li>change <code>c:\[path to angular2-webpack-starter]</code> to <code>C:\[path to angular2-webpack-starter]</code> see <a href="https://github.com/AngularClass/angular2-webpack-starter/issues/926#issuecomment-245223547">926#issuecomment-245223547</a></li>
+</ul>
+<h1 id="support-questions-or-feedback"><a name="user-content-support-questions-or-feedback" href="#support-questions-or-feedback" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Support, Questions, or Feedback</h1>
+<blockquote>
+<p>Contact us anytime for anything about this repo or Angular 2</p>
+</blockquote>
+<ul>
+<li><a href="http://angularclass.com/member-join/">Chat: AngularClass.slack</a></li>
+<li><a href="https://twitter.com/AngularClass">Twitter: @AngularClass</a></li>
+<li><a href="https://gitter.im/angularclass/angular2-webpack-starter">Gitter: AngularClass/angular2-webpack-starter</a></li>
+</ul>
+<h1 id="deployment"><a name="user-content-deployment" href="#deployment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deployment</h1>
+<h2 id="netlify"><a name="user-content-netlify" href="#netlify" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Netlify</h2>
+<p>You can quickly create a free site to get started using this<br />
+starter kit in production on <a href="https://www.netlify.com/">Netlify</a>:</p>
+<p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/AngularClass/angular2-webpack-starter"><img alt="Deploy to Netlify" src="https://www.netlify.com/img/deploy/button.svg" /></a></p>
+<p align="center">
+  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
+    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
+  </a>
+</p>
+
+<hr />
+<p>enjoy — <strong>AngularClass</strong></p>
+<p><br><br></p>
+<p><a href="https://angularclass.com"><img alt="AngularClass" src="https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png" title="Angular Class" /></a></p>
+<h2 id="angularclass"><a href="https://angularclass.com">AngularClass</a></h2>
+<blockquote>
+<p>Learn AngularJS, Angular 2, and Modern Web Development from the best.<br />
+Looking for corporate Angular training, want to host us, or Angular consulting? <a href="mailto:patrick@angularclass.com">patrick@angularclass.com</a></p>
+</blockquote>
+<hr />
+<h1 id="license"><a name="user-content-license" href="#license" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>License</h1>
+<p><a href="/LICENSE">MIT</a></p></article></body></html>
